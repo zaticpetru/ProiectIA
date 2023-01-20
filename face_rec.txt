@@ -1,0 +1,18 @@
+OpenCV este cea mai populară bibliotecă pentru computer vision.
+Scrisă inițial în C/C++, acum oferă legături pentru Python.
+OpenCV utilizează algoritmi de învățare automată pentru a căuta fețe într-o imagine.
+Deoarece fețele sunt atât de complicate, nu există un test simplu care să spună dacă a găsit sau nu o față.
+În schimb, există mii de mici modele și caracteristici care trebuie să fie potrivite.
+Algoritmii împart sarcina de identificare a feței în mii de sarcini mai mici, de dimensiuni reduse,
+fiecare dintre ele fiind ușor de rezolvat. Aceste sarcini se mai numesc și clasificatori.
+Pentru ceva de genul unei fețe, s-ar putea să aveți 6 000 sau mai mulți clasificatori,
+care trebuie să se potrivească toți pentru ca o față să fie detectată (în limitele de eroare, desigur).
+Dar tocmai aici se află problema:
+  pentru detectarea fețelor, algoritmul începe din stânga sus a unei imagini
+  și se deplasează în jos prin blocuri mici de date, analizând fiecare bloc.
+  Deoarece există 6.000 sau mai multe teste pe bloc, vor fi milioane de calcule de făcut.
+  Astfel, sunt folosite cascadele pentru ca procesul sa nu dureze ore, ci sa poata sa fie in timp real.
+  Cascadele impart problema detectării fețelor în mai multe etape.
+  Pentru fiecare bloc, se face un test foarte dur și rapid.
+  Dacă acesta trece, se face un test puțin mai detaliat și așa mai departe.
+  Algoritmul poate avea între 30 și 50 dintre aceste etape sau cascade și va detecta o față doar dacă toate etapele trec.
